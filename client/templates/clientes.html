@@ -1,0 +1,16 @@
+<template name = "clientes">
+<h1>Clientes</h1>
+
+	 {{#if showCliente}}
+ 		{{ > addCliente}}
+
+ 	{{else}}
+ 		<button class = "btn btn-info" style="margin-bottom:20px">Añadir</button>
+ 		{#each clientes}}
+			{{ > cliente}}
+		{{/each}}
+
+ 	{{/if}}
+
+
+</template>
