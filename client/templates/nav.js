@@ -1,10 +1,10 @@
 Template.nav.helpers({
 	'navActive' : function(item){
 				if(item == Session.get('active')){
-				return { class : "active"}
-			}
+					return { class : "active"}
+					}
 
-	}
+				},
 
 });
 

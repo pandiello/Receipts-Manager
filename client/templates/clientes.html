@@ -3,10 +3,9 @@
 
 	 {{#if showCliente}}
  		{{ > addCliente}}
-
- 	{{else}}
+	{{else}}
  		<button class = "btn btn-info" style="margin-bottom:20px">Añadir</button>
- 		{#each clientes}}
+ 		{{#each clientes}}
 			{{ > cliente}}
 		{{/each}}
 
