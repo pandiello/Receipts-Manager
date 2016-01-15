@@ -1,0 +1,28 @@
+<template name ="recibosTable">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Tipo</th>
+        <th>Info</th>
+      </tr>
+    </thead>
+    <tbody>
+     {{#each recibos}}
+     <tr>
+     	<td>
+     		{{recibo.id}}
+     	</td>
+
+     	<td>
+     		{{recibo.tipo}}
+     	</td>
+
+     	<td>
+     		{{recibo.info}}
+     	</td>
+     </tr>
+     {{/each}}
+    </tbody>
+  </table>
+</template>

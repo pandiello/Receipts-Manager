@@ -9,15 +9,21 @@
 	<div class = "panel-body">
 		<div>
 			<p style="margin-bottom-7px"> Direccion : {{direccion}}</p>
-
-			<div class="list-group">
-			{{#each recibos}}
-			<p class = "list-group-item">Id : {{id}}</p>
-			{{/each}}
-			</div>
-
+			{{#if showRecibos}}
+				{{recibosTable recibos}}
+			{{/if}}
+			
 		</div>
 	</div>
+
+	<span class="badge badge-recibes">
+	{{#if recibos}}
+		{{recibos.count}}
+	{{else}}
+		0
+	{{/if}}
+
+	</span>	<a href="" class = "card-link">Mostrar recibos</a>
 </div>
 
 </template> 	
