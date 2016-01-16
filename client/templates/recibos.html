@@ -1,0 +1,14 @@
+<template name = "recibos">
+	<h1>Recibos</h1>
+
+	{{#if showAddRecibo}}
+		{{> addRecibo}}
+	{{else}}
+		<button class ="btn btn-info" style="margin-bottom:20px">Añadir</button>
+		{{#each recibos}}
+			{{>recibo}}
+		{{/each}}
+
+	{{/if}}
+
+</template>

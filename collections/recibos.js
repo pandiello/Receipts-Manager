@@ -1,0 +1,1 @@
+Recibos = new Mongo.Collection('recibos');
