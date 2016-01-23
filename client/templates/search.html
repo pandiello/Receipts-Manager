@@ -1,5 +1,5 @@
 <template name="searchBox">
-  <input type="text" id="search-box" placeholder="search packages here" />
+  <input type="text" id="search-box" placeholder="Buscar cliente" />
 </template>
 
 <template name="searchResult">
@@ -13,7 +13,7 @@
     {{#each getPackages}}
     <div class="package">
       <h4 class="name">
-        <a href="{{git}}" target="_blank">{{{nombre}}}</a>
+        <a>{{{nombre}}}</a>
       </h4>
       <div class="description">
         {{{direccion}}}

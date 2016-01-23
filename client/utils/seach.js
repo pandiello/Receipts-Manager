@@ -4,4 +4,4 @@ var options = {
 };
 var fields = ['nombre', 'direccion'];
 
-CilentesSeach = new SearchSource('clientes', fields, options);
+ClienteSearch = new SearchSource('clientess', fields, options);

@@ -1,6 +1,8 @@
 //Search package configuration-----------------------------------------
-//-----------------------------------------------------------------------
-SearchSource.defineSource('clientes', function(searchText, options) {
+
+SearchSource.defineSource('clientess', function(searchText, options) {
+  console.log(searchText);
+
   var options = {sort: {isoScore: -1}, limit: 20};
   
   if(searchText) {
@@ -9,18 +11,20 @@ SearchSource.defineSource('clientes', function(searchText, options) {
       {nombre: regExp},
       {direccion: regExp}
     ]};
-    
+
     return Clientes.find(selector, options).fetch();
   } else {
     return Clientes.find({}, options).fetch();
   }
 });
-
+//-----------------------------------------------------------------------
+//-----------------------------------------------------------------------
+//-----------------------------------------------------------------------
 function buildRegExp(searchText) {
-  // this is a dumb implementation
-  var parts = searchText.trim().split(/[ \-\:]+/);
-  return new RegExp("(" + parts.join('|') + ")", "ig");
+  var words = searchText.trim().split(/[ \-\:]+/);
+  var exps = _.map(words, function(word) {
+    return "(?=.*" + word + ")";
+  });
+  var fullExp = exps.join('') + ".+";
+  return new RegExp(fullExp, "i");
 }
-//-----------------------------------------------------------------------
-//-----------------------------------------------------------------------
-//-----------------------------------------------------------------------
