@@ -21,11 +21,11 @@ Template.addRecibo.events({
         cantidad : event.target.inputCantidad.value
       };
 
-      console.log(recibo);
-
       var cliente = Session.get('clienteSelected');
 
       Clientes.update({ _id: cliente._id},{ $push: { recibos: recibo }})
+
+      Recibos.insert(recibo);
     
 
   },

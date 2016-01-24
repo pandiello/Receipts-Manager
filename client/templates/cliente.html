@@ -9,22 +9,19 @@
 	<div class = "panel-body">
 		<div>
 			<p style="margin-bottom-7px"> Direccion : {{direccion}}</p>
-			{{#if showRecibos}}
-				{{recibosTable recibos}}
-			{{/if}}
 			
 		</div>
 	</div>
 
 	{{#if mostrarRecibos}}
 
-		{{>recibosTable recibos}}
+		{{>recibosTable}}
 		<a href="#" class ="card-link" id="ocultarRecibos">Ocultar recibos</a>
 	{{else}}
 		<span class="badge badge-recibes">
 	
 		{{#if recibos}}
-			{{recibos.count}}
+			{{recibos.length}}
 				
 		{{else}}
 			0

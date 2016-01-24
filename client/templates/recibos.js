@@ -2,6 +2,7 @@ Template.recibos.helpers({
 	recibos : function(){
 		return Recibos.find({});
 	},
+
 	showAddRecibo : function(){
 		return Session.get('showAddRecibo');
 	}	
